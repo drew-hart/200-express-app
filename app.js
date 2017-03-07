@@ -1,7 +1,8 @@
 const express = require('express');
-var app = express();
 
-app.get('/', function(req, res) {
+const app = express();
+
+app.get('/', function (req, res) {
   res.send('Hi there, welcome to my assignment!');
 });
 
@@ -26,17 +27,17 @@ app.get('/repeat/:action/:num', function (req, res) {
   const action = req.params.action;
   const actions = [];
 
-  for (let i = 0; i < num; i++) {
+  for (let i = 0; i < num; i += 1) {
     actions.push(action);
   }
 
   res.send(actions.join(' '));
 });
 
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
   res.send('Sorry that page is not found');
 });
 
-app.listen(8080, function() {
+app.listen(8080, function () {
   console.log('Web server started...');
 });

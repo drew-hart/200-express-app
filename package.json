@@ -1,0 +1,29 @@
+{
+  "name": "webdevbootcamp-200",
+  "version": "1.0.0",
+  "description": "Web Dev Bootcamp - Excercise series 200 for Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drew-hart/200-express-app.git"
+  },
+  "keywords": [
+    "Web",
+    "Development",
+    "Bootcamp",
+    "Excercise",
+    "Express"
+  ],
+  "author": "Drew Hart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drew-hart/200-express-app/issues"
+  },
+  "homepage": "https://github.com/drew-hart/200-express-app#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

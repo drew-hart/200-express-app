@@ -25,5 +25,9 @@
   "homepage": "https://github.com/drew-hart/200-express-app#readme",
   "dependencies": {
     "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-google": "^0.7.1"
   }
 }

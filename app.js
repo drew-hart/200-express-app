@@ -2,27 +2,25 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send('Hi there, welcome to my assignment!');
 });
 
-app.get('/speak/:animal', function (req, res) {
-  switch (req.params.animal) {
-    case 'pig':
-      res.send('The pig says Oink!');
-      break;
-    case 'cow':
-      res.send('The cow says Moo');
-      break;
-    case 'dog':
-      res.send('The dog says Woof Woof!');
-      break;
-    default:
-      res.send('What kind of animal are you?');
-  }
+app.get('/speak/:animal', (req, res) => {
+  const sounds = {
+    pig: 'Oink',
+    cow: 'Moo',
+    dog: 'Woof Woof!',
+    cat: 'Meow',
+    goldfish: '...',
+  };
+  const animal = req.params.animal.toLowerCase();
+  const sound = sounds[animal];
+
+  res.send(`The ${animal} says "${sound}"`);
 });
 
-app.get('/repeat/:action/:num', function (req, res) {
+app.get('/repeat/:action/:num', (req, res) => {
   const num = parseInt(req.params.num, 10);
   const action = req.params.action;
   const actions = [];
@@ -34,10 +32,10 @@ app.get('/repeat/:action/:num', function (req, res) {
   res.send(actions.join(' '));
 });
 
-app.get('*', function (req, res) {
+app.get('*', (req, res) => {
   res.send('Sorry that page is not found');
 });
 
-app.listen(8080, function () {
+app.listen(8080, () => {
   console.log('Web server started...');
 });
